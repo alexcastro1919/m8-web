@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <h1>E11 - Intereses</h1>
+        </header>
+
+        <section>
+            <h3>Enunciado</h3>
+            <p>
+                Programa que muestra el crecimiento de una inversión a
+                <a href="https://es.wikipedia.org/wiki/Inter%C3%A9s_compuesto"><strong>interés compuesto</strong></a>
+
+                El usuario entra el capital inicial, la tasa de interés anual y el plazo
+                en años.
+
+                El programa muestra una tabla con tres columnas y una fila por cada año.
+
+                En la primera columna aparece el número del año, en la segunda los
+                intereses generados en ese año y en la tercera el capital acumulado.
+            </p>
+        </section>
+
+        <section>
+            <h3>Salida del programa</h3>
+            <pre class="console">
+
+    Entra el capital inicial : 8000
+    Entra la tasa de interés anual : 4.5
+    Entra el número de años : 5
+
+    +-----+-------------+-------------------+
+    | AÑO |  INTERESES  | CAPITAL ACUMULADO |
+    +-----+-------------+-------------------+
+    |   1 |      360,00 |          8.360,00 |
+    |   2 |      376,20 |          8.736,20 |
+    |   3 |      393,13 |          9.129,33 |
+    |   4 |      410,82 |          9.540,15 |
+    |   5 |      429,31 |          9.969,46 |
+    +-----+-------------+-------------------+
+    Capital final :    9969,46
+
+            </pre>
+        </section>
+
+        <section>
+            <h3>Solución</h3>
+            <pre>
+    import java.io.*;
+
+    public class E11_Intereses {
+
+        public static void main(String[] args) throws IOException {
+
+            BufferedReader entrada = new BufferedReader(
+            new InputStreamReader(System.in));
+
+            <code class="comment">//Leer los datos</code>
+
+            System.out.print(<code class="string">"Entra el capital inicial : "</code>);
+            double capital = Double.parseDouble(entrada.readLine());
+
+            System.out.print(<code class="string">"Entra la tasa de interés anual : "</code>);
+            double tasa = Double.parseDouble(entrada.readLine());
+
+            System.out.print(<code class="string">"Entra el número de años : "</code>);
+            int anyos = Integer.parseInt(entrada.readLine());
+
+            <code class="comment">//Mostrar la cabecera de la tabla</code>
+
+            System.out.println (<code class="string">"+-----+-------------+-------------------+"</code>);
+            System.out.println (<code class="string">"| AÑO |  INTERESES  | CAPITAL ACUMULADO |"</code>);
+            System.out.println (<code class="string">"+-----+-------------+-------------------+"</code>);
+
+            <code class="comment">//Mostrar las filas de la tabla mediante un bucle</code>
+
+            double interes;
+            for(int i=1; i<=anyos; i++){
+
+                interes = capital * tasa / 100;
+                capital += interes;
+                System.out.printf (<code class="string">"| %3d | %,11.2f | %,17.2f |\n",i,interes,capital</code>);
+
+            }
+
+            <code class="comment">//Mostrar el pie de la tabla</code>
+
+            System.out.println (<code class="string">"+-----+-------------+-------------------+"</code>);
+
+            <code class="comment">//Mostrar el capital final</code>
+
+            System.out.printf(<code class="string">"Capital final : %10.2f "</code>, capital);
+        }
+    }
+            </pre>
+        </section>
+
+        <footer>
+            <a href="https://iesthosicodina.cat">IES Thos i Coina</a>
+        </footer>
+    </div>
+</body>
+</html>

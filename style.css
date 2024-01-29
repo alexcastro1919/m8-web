@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Poppins-Light;
+    src: url("./fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url("./fonts/Poppins-Bold.ttf");
+}
+
+body {
+    font-family: Poppins-Light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-image: url("./img/pentagon.png");
+}
+
+#main-container {
+    max-width: 45em;
+    background-color: #bcf5e4;
+    border-left: 5px solid green;
+    border-right: 5px solid green;
+    padding: 1em;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./img/bg_green.png");
+    margin: 0em 1em 2em 1em;
+    border: 15px solid #087708;
+    border-style: double;
+    border-radius: 16px;
+    font-family: Poppins-Bold, serif;
+}
+
+header > h1 {
+    color: #314607;
+    letter-spacing: 15px;
+    text-shadow: 4px 4px 4px #879887;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 0em 1em 2em 1em;
+    border: 4px solid #087708;
+    border-radius: 16px;
+    background-color: white;
+}
+
+h3 {
+    background-color: green;
+    margin: 4px;
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    padding-left: 1em;
+    border-bottom: 3px solid black;
+    color: white;
+}
+
+p {
+    margin: 10px;
+    font-size: 14px;
+}
+
+.console {
+    background-color: black;
+    color: white;
+    margin: 3em 3em 3em 3em;
+}
+
+pre {
+    overflow: scroll;
+}
+
+.comment {
+    color: green;
+}
+
+.string {
+    color: #ff4400;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+}
+
+footer > a {
+    color: #087708;
+}
